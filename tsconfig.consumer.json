@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["tests/consumer/main.tsx"],
+  "exclude": ["node_modules"]
+}

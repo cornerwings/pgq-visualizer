@@ -1,0 +1,57 @@
+{
+  "name": "pgq-visualizer",
+  "version": "0.1.0",
+  "description": "React editor and visualizer for CREATE PROPERTY GRAPH SQL",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/cornerwings/pgq-visualizer.git" },
+  "homepage": "https://github.com/cornerwings/pgq-visualizer#readme",
+  "bugs": { "url": "https://github.com/cornerwings/pgq-visualizer/issues" },
+  "keywords": ["react", "sql", "property-graph", "visualization", "pgq"],
+  "type": "module",
+  "files": ["dist", "README.md", "LICENSE"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./style.css": "./dist/style.css"
+  },
+  "sideEffects": ["**/*.css"],
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "vite build --config vite.lib.config.ts && tsc -p tsconfig.build.json",
+    "build:demo": "vite build --outDir demo-dist",
+    "preview": "vite preview --outDir demo-dist --port 5173",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "test:consumer": "npm run build && tsc -p tsconfig.consumer.json && vite build tests/consumer --outDir ../../.consumer-dist --emptyOutDir",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@codemirror/lang-sql": "^6.10.0",
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/lint": "^6.9.7",
+    "@codemirror/view": "^6.43.13",
+    "@dagrejs/dagre": "^3.1.1",
+    "@lezer/highlight": "^1.2.4",
+    "@xyflow/react": "^12.12.0",
+    "codemirror": "^6.0.2",
+    "lucide-react": "^1.31.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/dagre": "^0.7.54",
+    "@types/node": "^22.19.19",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.13"
+  }
+}

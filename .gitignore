@@ -1,0 +1,8 @@
+node_modules/
+dist/
+demo-dist/
+.consumer-dist/
+coverage/
+*.tsbuildinfo
+.DS_Store
+.env*
